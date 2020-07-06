@@ -1,0 +1,16 @@
+.header {
+  width: 100vw;
+  height: 50px;
+  color: white;
+  background-color: #000080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+
+.logo {
+  position: absolute;
+  left: 1rem;
+}

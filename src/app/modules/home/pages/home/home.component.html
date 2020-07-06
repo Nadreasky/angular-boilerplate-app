@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col">
+      <div class="alert text-center" [ngClass]="{'alert-primary': environment.production === false, 'alert-success': environment.production === true}" role="alert">
+        This application is in {{ environment.production ? 'PROD' : 'DEV'}} mode
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col">
+      <h1 class="display-3 text-center">Count down to new year:</h1>
+      <h1 class="display-2 text-center">{{ countdownTime }}</h1>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-5">
+    <a routerLink="/users" class="btn btn-info">Users Management</a>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.logo {
+  width: 40px;
+  height: 40px;
+  font-size: 1.75rem;
+  color: #00008B;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
