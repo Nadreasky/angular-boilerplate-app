@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="countdownTime; else spinnerTemplate">
   <div class="row justify-content-center">
     <div class="col">
       <div class="alert text-center" [ngClass]="{'alert-primary': environment.production === false, 'alert-success': environment.production === true}" role="alert">
@@ -16,3 +16,6 @@
     <a routerLink="/users" class="btn btn-info">Users Management</a>
   </div>
 </div>
+<ng-template #spinnerTemplate>
+  <app-spinner></app-spinner>
+</ng-template>

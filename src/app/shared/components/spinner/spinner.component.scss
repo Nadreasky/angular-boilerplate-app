@@ -1,0 +1,65 @@
+@keyframes spinner {
+   0% { transform: translate(6px,40px) scale(0); }
+  25% { transform: translate(6px,40px) scale(0); }
+  50% { transform: translate(6px,40px) scale(1); }
+  75% { transform: translate(40px,40px) scale(1); }
+ 100% { transform: translate(74px,40px) scale(1); }
+}
+@keyframes spinner-r {
+   0% { transform: translate(74px,40px) scale(1); }
+ 100% { transform: translate(74px,40px) scale(0); }
+}
+@keyframes spinner-c {
+   0% { background: #ff0000 }
+  25% { background: #ffff00 }
+  50% { background: #ff1493 }
+  75% { background: #00ffff }
+ 100% { background: #ff0000 }
+}
+.spinner div {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translate(40px,40px) scale(1);
+  background: #ff0000;
+  animation: spinner 1s infinite cubic-bezier(0,0.5,0.5,1);
+}
+.spinner div:nth-child(1) {
+  background: #00ffff;
+  transform: translate(74px,40px) scale(1);
+  animation: spinner-r 0.25s infinite cubic-bezier(0,0.5,0.5,1), spinner-c 1s infinite step-start;
+}.spinner div:nth-child(2) {
+  animation-delay: -0.25s;
+  background: #ff0000;
+}.spinner div:nth-child(3) {
+  animation-delay: -0.5s;
+  background: #00ffff;
+}.spinner div:nth-child(4) {
+  animation-delay: -0.75s;
+  background: #ff1493;
+}.spinner div:nth-child(5) {
+  animation-delay: -1s;
+  background: #ffff00;
+}
+.loadingio-spinner-ellipsis {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  overflow: hidden;
+  background: none;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.spinner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(0.5);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.spinner div { box-sizing: content-box; }
