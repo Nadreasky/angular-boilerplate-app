@@ -4,7 +4,8 @@
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" formControlName="username" class="form-control" id="username" placeholder="Enter your username">
+          <input type="text" formControlName="username" class="form-control" id="username" placeholder="Enter your username" aria-describedby="emailHelp">
+          <small id="usernameHelp" class="form-text text-muted">Test account: nadreak - Pass: 1234x@X</small>
         </div>
         <div class="form-group">
           <label for="password">Password</label>

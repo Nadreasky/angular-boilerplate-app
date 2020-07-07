@@ -1,4 +1,13 @@
 <div class="header">
   <app-logo class="logo"></app-logo>
   An Angular boilerplate application
+  <div class="header__login-section">
+    <div *ngIf="(loggedInUser$ | async) as user; else loginTemplate">
+      <p>{{ user.name }}</p>
+    </div>
+  </div>
 </div>
+
+<ng-template #loginTemplate>
+  <a routerLink="/auth/login" class="btn btn-light">Login</a>
+</ng-template>

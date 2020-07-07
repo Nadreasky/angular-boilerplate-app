@@ -10,7 +10,7 @@ export interface State {
   error: any;
 }
 
-export const adapter: EntityAdapter<Auth> = createEntityAdapter<Auth>();
+// export const adapter: EntityAdapter<Auth> = createEntityAdapter<Auth>();
 
 export const initialState: State = {
   loading: false,
@@ -49,5 +49,7 @@ export function reducer(state: State = initialState, action: AuthActions): State
         loggedInUser: null
       };
     }
+    default: 
+      return state;
   }
 }

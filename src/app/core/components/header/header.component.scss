@@ -8,6 +8,14 @@
   align-items: center;
   line-height: 50px;
   text-transform: uppercase;
+
+  &__login-section {
+    position: absolute;
+    right: 2rem;
+    width: 200px;
+    height: 50px;
+    text-overflow: ellipsis;
+  }
 }
 
 .logo {

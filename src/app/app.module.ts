@@ -1,28 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
-import { environment } from 'src/environments/environment';
-import { reducers, effects } from './store';
-
-
-// logger store 
-// console.log all actions
-export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
-  return function(state, action) {
-    console.log('state', state);
-    console.log('action', action);
- 
-    return reducer(state, action);
-  };
-}
- export const metaReducers: MetaReducer<any>[] = !environment.production ? [debug] : [];
+import { reducers, effects, metaReducers } from './store';
 
 
 @NgModule({
@@ -36,6 +23,7 @@ export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
     StoreModule.forRoot(reducers, ({ metaReducers })),
     EffectsModule.forRoot(effects),
     StoreRouterConnectingModule.forRoot(),
+    StoreDevtoolsModule.instrument(),
   ],
   providers: [],
   bootstrap: [AppComponent]
