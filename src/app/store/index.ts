@@ -4,9 +4,11 @@ import { environment } from 'src/environments/environment';
 
 //Reducers
 import * as authReducer from './auth/reducers/auth.reducer';
+import * as userReducer from './user/reducers/user.reducer';
 
 //Effects
 import { AuthEffects } from './auth/effects/auth.effects';
+import { UserEffects } from './user/effects/user.effects';
 
 // Meta reducer
 // logger store 
@@ -24,16 +26,19 @@ export const metaReducers: MetaReducer<any>[] = !environment.production ? [debug
 
 export interface AppState {
   router: RouterReducerState,
-  auth: authReducer.State
+  auth: authReducer.State,
+  user: userReducer.State
 }
 
 
 export const reducers: ActionReducerMap<AppState> =  {
   router: routerReducer,
-  auth: authReducer.reducer
+  auth: authReducer.reducer,
+  user: userReducer.reducer
 };
 
 
 export const effects = [
-  AuthEffects
+  AuthEffects,
+  UserEffects
 ];

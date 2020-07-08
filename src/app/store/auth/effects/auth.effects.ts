@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType, act } from '@ngrx/effects';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import { map, mergeMap, catchError, exhaustMap, tap } from 'rxjs/operators';
 import { 
   AuthActionTypes,
@@ -31,9 +31,7 @@ export class AuthEffects {
       return this.authService.login(username, password).pipe(
         map(user => new LoginSuccess({ user })),
         tap(() => this.navigationService.navigateToHomepage()),
-        catchError(error => {
-          return of(new LoginFailure({ error }))
-        })
+        catchError(error => of(new LoginFailure({ error })))
       );
     })
   )

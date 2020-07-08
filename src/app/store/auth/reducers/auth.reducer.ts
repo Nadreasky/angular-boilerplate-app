@@ -31,7 +31,8 @@ export function reducer(state: State = initialState, action: AuthActions): State
       return {
         ...state,
         loading: false,
-        loggedInUser: action.payload.user
+        loggedInUser: action.payload.user,
+        error: null
       };
     }
     case AuthActionTypes.LOGIN_FAILURE:

@@ -13,7 +13,8 @@ import { AuthGuard } from './guards';
 import {
   ApiService,
   AuthorizationService,
-  NavigationService
+  NavigationService,
+  UserService
 } from './services';
 
 
@@ -29,6 +30,7 @@ import {
     ApiService,
     AuthorizationService,
     NavigationService,
+    UserService,
 
     // GUARDS
     AuthGuard

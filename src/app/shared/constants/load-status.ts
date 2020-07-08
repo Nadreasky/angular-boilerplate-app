@@ -1,0 +1,5 @@
+export enum LOAD_STATUS {
+  INITIAL = 'INITIAL',
+  LOADING = 'LOADING',
+  LOADED = 'LOADED'
+}
