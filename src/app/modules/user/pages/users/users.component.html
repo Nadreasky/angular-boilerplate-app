@@ -12,6 +12,11 @@
         </thead>
         <tbody>
           <ng-container *ngIf="(loadStatus$ | async) === LOAD_STATUS.LOADED; else loading">
+            <ng-container *ngIf="(users$ | async)?.length === 0">
+              <tr>
+                <td colspan="4">There's no users available.</td>
+              </tr>
+            </ng-container>
             <tr *ngFor="let user of users$ | async">
               <th scope="row">{{ user.id }}</th>
               <td>{{ user.name }}</td>
